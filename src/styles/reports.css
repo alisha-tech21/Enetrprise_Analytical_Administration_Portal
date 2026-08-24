@@ -1,0 +1,666 @@
+/* =========================================================
+   REPORTS PAGE
+========================================================= */
+
+.reports-page {
+  width: 100%;
+}
+
+/* =========================================================
+   REPORT STATS
+========================================================= */
+
+.report-stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+.report-stat-card {
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 17px;
+
+  background: var(--bg-secondary);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 12px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.report-stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background: var(--rainbow-gradient-horizontal);
+}
+
+.report-stat-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.report-stat-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: var(--rainbow-gradient-soft);
+
+  color: var(--accent);
+
+  font-size: 16px;
+
+  font-weight: 600;
+}
+
+.report-stat-card:nth-child(1) .report-stat-icon {
+  background: var(--purple-soft);
+  color: var(--purple);
+}
+
+.report-stat-card:nth-child(2) .report-stat-icon {
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+
+.report-stat-card:nth-child(3) .report-stat-icon {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.report-stat-card:nth-child(4) .report-stat-icon {
+  background: var(--orange-soft);
+  color: var(--orange);
+}
+
+.report-stat-card div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.report-stat-card span {
+  font-size: 9px;
+
+  color: var(--text-muted);
+}
+
+.report-stat-card strong {
+  font-size: 18px;
+
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   REPORTS CARD
+========================================================= */
+
+.reports-card {
+  position: relative;
+
+  overflow: hidden;
+
+  background: var(--bg-secondary);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 12px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.reports-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background: var(--rainbow-gradient-horizontal);
+}
+
+.reports-card-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reports-card-header h3 {
+  margin: 0 0 4px;
+
+  font-size: 13px;
+
+  color: var(--text-primary);
+}
+
+.reports-card-header p {
+  margin: 0;
+
+  font-size: 10px;
+
+  color: var(--text-muted);
+}
+
+.reports-card-header select {
+  height: 34px;
+
+  padding: 0 10px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 7px;
+
+  background: var(--bg-tertiary);
+
+  color: var(--text-secondary);
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   REPORT ROW
+========================================================= */
+
+.reports-list {
+  width: 100%;
+}
+
+.report-row {
+  display: grid;
+
+  grid-template-columns: 1fr 80px 110px 110px;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 15px 20px;
+
+  border-bottom: 1px solid var(--border-color);
+
+  transition: background 0.15s ease;
+}
+
+.report-row:last-child {
+  border-bottom: none;
+}
+
+.report-row:hover {
+  background: var(--rainbow-gradient-soft);
+}
+
+/* =========================================================
+   REPORT INFO
+========================================================= */
+
+.report-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 0;
+}
+
+.report-file-icon {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: var(--purple-soft);
+
+  color: var(--purple);
+
+  font-size: 14px;
+}
+
+.report-info div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+.report-info strong {
+  overflow: hidden;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: var(--text-primary);
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.report-info span {
+  font-size: 9px;
+
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   FORMAT
+========================================================= */
+
+.report-format {
+  font-size: 10px;
+
+  font-weight: 600;
+
+  color: var(--text-secondary);
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.report-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+.report-status span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+}
+
+.report-status.ready {
+  color: var(--green);
+}
+
+.report-status.ready span {
+  background: var(--green);
+}
+
+.report-status.processing {
+  color: var(--orange);
+}
+
+.report-status.processing span {
+  background: var(--orange);
+}
+
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
+
+.download-button {
+  height: 32px;
+
+  padding: 0 10px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 7px;
+
+  background: var(--bg-tertiary);
+
+  color: var(--text-secondary);
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.download-button:hover:not(:disabled) {
+  border-color: var(--purple);
+
+  color: var(--purple);
+
+  background: var(--purple-soft);
+}
+
+.download-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   REPORT CONTROLS
+========================================================= */
+
+.reports-controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.reports-search {
+  width: 220px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 11px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 8px;
+
+  background: var(--bg-tertiary);
+}
+
+.reports-search:focus-within {
+  border-color: var(--purple);
+
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.08);
+}
+
+.reports-search span {
+  color: var(--text-muted);
+
+  font-size: 15px;
+}
+
+.reports-search input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  font-size: 11px;
+}
+
+.reports-search input::placeholder {
+  color: var(--text-muted);
+}
+
+.reports-controls select {
+  height: 38px;
+
+  padding: 0 10px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: var(--bg-tertiary);
+
+  color: var(--text-secondary);
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   VIEW REPORT BUTTON
+========================================================= */
+
+.view-report-button {
+  height: 32px;
+
+  padding: 0 12px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 7px;
+
+  background: var(--bg-secondary);
+
+  color: var(--accent);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.view-report-button:hover:not(:disabled) {
+  background: var(--purple-soft);
+
+  border-color: var(--purple);
+
+  color: var(--purple);
+}
+
+.view-report-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   REPORT DETAIL MODAL
+========================================================= */
+
+.report-detail-modal {
+  width: 100%;
+
+  max-width: 760px;
+}
+
+.report-detail-meta {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.report-detail-meta div {
+  padding: 12px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 8px;
+
+  background: var(--rainbow-gradient-soft);
+}
+
+.report-detail-meta span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+.report-detail-meta strong {
+  color: var(--text-primary);
+
+  font-size: 11px;
+}
+
+.report-detail-chart {
+  width: 100%;
+
+  height: 330px;
+
+  padding: 10px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 10px;
+
+  background: var(--bg-tertiary);
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.no-reports {
+  padding: 50px 20px;
+
+  text-align: center;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .report-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .report-row {
+    grid-template-columns: 1fr 80px 100px;
+  }
+
+  .download-button {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .reports-controls {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .reports-search {
+    width: 100%;
+  }
+
+  .reports-controls select {
+    width: 100%;
+  }
+
+  .report-detail-chart {
+    height: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  .report-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .reports-card-header {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .reports-card-header select {
+    width: 100%;
+  }
+
+  .report-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .report-format {
+    display: none;
+  }
+
+  .report-detail-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .report-detail-modal {
+    padding: 18px;
+  }
+}

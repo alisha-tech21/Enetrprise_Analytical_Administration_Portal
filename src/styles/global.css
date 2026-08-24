@@ -1,0 +1,533 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* =========================================================
+   ANALYTIX — SOFT LAVENDER PREMIUM DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+  /* =========================
+     BACKGROUNDS
+  ========================= */
+
+  --bg-primary: #f7f4ff;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f3efff;
+
+  --surface-lowest: #ffffff;
+  --surface-low: #fcfaff;
+  --surface: #f7f3ff;
+  --surface-high: #f0ebff;
+  --surface-highest: #e9e1ff;
+
+  /* =========================
+     BORDERS
+  ========================= */
+
+  --border-color: #e7e0f3;
+  --border-light: #f0eafb;
+
+  /* =========================
+     TEXT
+  ========================= */
+
+  --text-primary: #292342;
+  --text-secondary: #69627d;
+  --text-muted: #9a93aa;
+
+  /* =========================
+     PRIMARY PURPLE
+  ========================= */
+
+  --accent: #8064d8;
+  --accent-light: #a88eea;
+  --accent-dark: #6848c4;
+
+  --accent-soft: rgba(128, 100, 216, 0.1);
+  --accent-glow: rgba(128, 100, 216, 0.16);
+
+  /* =========================
+     PASTEL ACCENTS
+  ========================= */
+
+  --pink: #fc7ab9;
+  --pink-light: #ff83bf;
+  --pink-soft: #fff1f8;
+
+  --blue: #71a3ff;
+  --blue-light: #5dacf5;
+  --blue-soft: #eff3fa;
+
+  --cyan: #26edf4;
+  --cyan-soft: #dcffff;
+
+  --green: #67d89a;
+  --green-light: #b7dfc7;
+  --green-soft: #f1fff7;
+
+  --yellow: #e9c77d;
+  --yellow-soft: #fff8e5;
+
+  --orange: #eda87d;
+  --orange-soft: #fff0e8;
+
+  --red: #e9959f;
+  --red-soft: #fff0f2;
+
+  /* =========================
+     PURPLE ALIASES
+     (used by reports.css / users.css — kept as
+     separate names but tied to the same accent
+     purple so light/dark mode stay in sync)
+  ========================= */
+
+  --purple: var(--accent);
+  --purple-light: var(--accent-light);
+  --purple-soft: var(--accent-soft);
+
+  /* Softer, pastel purple used only for chart lines/bars/areas
+     (kept separate from --accent so buttons, the sidebar and
+     other branding stay the stronger, vivid purple) */
+  --chart-purple: #b39ddb;
+
+  /* =========================
+     SEMANTIC STATUS COLORS
+     (used by Profile/Settings/Analytics for
+     "saved" messages and positive metrics)
+  ========================= */
+
+  --success: var(--green);
+  --success-soft: var(--green-soft);
+
+  /* =========================
+     GRADIENTS
+  ========================= */
+
+  --purple-gradient: linear-gradient(135deg, #8064d8 0%, #9b7ce4 100%);
+
+  --purple-soft-gradient: linear-gradient(135deg, #eee7ff 0%, #f8f3ff 100%);
+
+  --pink-gradient: linear-gradient(135deg, #ed9fc5 0%, #f4b8d4 100%);
+
+  --blue-gradient: linear-gradient(135deg, #91afe8 0%, #b6caf3 100%);
+
+  --green-gradient: linear-gradient(135deg, #91c9a9 0%, #b7dfc7 100%);
+
+  /* Multi-color "rainbow" strip used as the thin top
+     border on Reports / Users stat cards, and as the
+     active pagination background */
+
+  --rainbow-gradient-horizontal: linear-gradient(
+    90deg,
+    var(--accent) 0%,
+    var(--pink) 35%,
+    var(--blue) 65%,
+    var(--green) 100%
+  );
+
+  --rainbow-gradient: var(--rainbow-gradient-horizontal);
+
+  --rainbow-gradient-soft: linear-gradient(
+    90deg,
+    rgba(128, 100, 216, 0.06) 0%,
+    rgba(237, 159, 197, 0.06) 35%,
+    rgba(145, 175, 232, 0.06) 65%,
+    rgba(145, 201, 169, 0.06) 100%
+  );
+
+  /* =========================
+     CHART COLORS (Recharts)
+     Aliased to the palette above so charts stay in
+     sync automatically between light & dark mode.
+  ========================= */
+
+  --chart-primary: var(--accent);
+  --chart-secondary: var(--pink);
+
+  --chart-grid: var(--border-color);
+  --chart-axis: var(--text-muted);
+
+  --chart-tooltip-bg: var(--bg-secondary);
+  --chart-tooltip-border: var(--border-color);
+  --chart-tooltip-text: var(--text-primary);
+
+  --chart-activity-1: var(--accent);
+  --chart-activity-2: var(--pink);
+  --chart-activity-3: var(--blue);
+  --chart-activity-4: var(--green);
+
+  /* =========================
+     SHADOWS
+  ========================= */
+
+  --shadow-sm: 0 3px 12px rgba(92, 72, 140, 0.06);
+
+  --shadow-md: 0 8px 25px rgba(92, 72, 140, 0.09);
+
+  --shadow-lg: 0 16px 45px rgba(92, 72, 140, 0.12);
+
+  --shadow-hover: 0 12px 30px rgba(128, 100, 216, 0.15);
+
+  --shadow-dropdown: 0 18px 45px rgba(72, 55, 110, 0.16);
+
+  /* =========================
+     RADIUS
+  ========================= */
+
+  --radius-sm: 8px;
+  --radius: 10px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 999px;
+
+  /* =========================
+     SPACING
+  ========================= */
+
+  --space-xs: 4px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+
+  /* =========================
+     LAYOUT
+  ========================= */
+
+  --sidebar-width: 250px;
+  --topbar-height: 72px;
+
+  /* =========================
+     TRANSITIONS
+  ========================= */
+
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+[data-theme="dark"] {
+  --bg-primary: #171522;
+  --bg-secondary: #211d2f;
+  --bg-tertiary: #29233a;
+
+  --surface-lowest: #211d2f;
+  --surface-low: #252036;
+  --surface: #2b2540;
+  --surface-high: #322b49;
+  --surface-highest: #393151;
+
+  --border-color: #403752;
+  --border-light: #352d47;
+
+  --text-primary: #f8f5ff;
+  --text-secondary: #d1c9df;
+  --text-muted: #958da5;
+
+  --accent: #a88eea;
+  --accent-light: #c0aef2;
+  --accent-dark: #8f72df;
+
+  --accent-soft: rgba(168, 142, 234, 0.14);
+  --accent-glow: rgba(168, 142, 234, 0.2);
+
+  --pink: #fc7ab9;
+  --pink-light: #ff83bf;
+  --pink-soft: #fff1f8;
+
+  --blue: #71a3ff;
+  --blue-light: #5dacf5;
+  --blue-soft: #eff3fa;
+
+  --cyan: #82f5f7;
+  --cyan-soft: #f1fcfc;
+
+  --green: #67d89a;
+  --green-light: #b7dfc7;
+  --green-soft: #f1fff7;
+
+  --yellow: #e9c77d;
+  --yellow-soft: #fff8e5;
+
+  --orange: #eda87d;
+  --orange-soft: #fff0e8;
+
+  --red: #e9959f;
+  --red-soft: #fff0f2;
+
+  --purple-gradient: linear-gradient(135deg, #8f72df, #a88eea);
+
+  --purple-soft-gradient: linear-gradient(135deg, #302746, #282238);
+
+  --chart-purple: #c9b8ea;
+
+  --rainbow-gradient-soft: linear-gradient(
+    90deg,
+    rgba(168, 142, 234, 0.12) 0%,
+    rgba(240, 168, 202, 0.12) 35%,
+    rgba(157, 186, 240, 0.12) 65%,
+    rgba(155, 210, 177, 0.12) 100%
+  );
+
+  --shadow-sm: 0 3px 12px rgba(0, 0, 0, 0.2);
+
+  --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+  --shadow-lg: 0 16px 45px rgba(0, 0, 0, 0.3);
+
+  --shadow-hover: 0 12px 30px rgba(168, 142, 234, 0.18);
+}
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+:root {
+  font-family: "Inter", sans-serif;
+
+  color: var(--text-primary);
+  background: var(--bg-primary);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: var(--bg-primary);
+  color: var(--text-primary);
+
+  transition:
+    background var(--transition-normal),
+    color var(--transition-normal);
+}
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  outline: none;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(128, 100, 216, 0.22);
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d8cdec;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8a8dc;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #55496d;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #695b85;
+}
+
+/* =========================================================
+   COMMON CARD
+   ========================================================= */
+
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.page-content {
+  background: var(--bg-primary);
+}
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
+}
+
+/* =========================================================
+   NUMBER ALIGNMENT
+   ========================================================= */
+
+strong,
+.stat-value,
+.metric-value,
+.data-value,
+.amount {
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================================
+   PREMIUM BUTTONS
+   ========================================================= */
+
+.primary-button {
+  background: var(--purple-gradient);
+  color: #ffffff;
+  border-radius: var(--radius);
+  padding: 9px 15px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  box-shadow: 0 5px 14px rgba(128, 100, 216, 0.18);
+
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 8px 20px rgba(128, 100, 216, 0.25);
+}
+
+/* =========================================================
+   PASTEL ICON BOXES
+   ========================================================= */
+
+.icon-purple {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.icon-pink {
+  background: var(--pink-soft);
+  color: var(--pink);
+}
+
+.icon-blue {
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+
+.icon-green {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.icon-yellow {
+  background: var(--yellow-soft);
+  color: var(--yellow);
+}
+
+/* =========================================================
+   UTILITY COLORS
+   ========================================================= */
+
+.color-purple {
+  color: #7e5cef;
+}
+
+.color-pink {
+  color: #fc419b;
+}
+
+.color-blue {
+  color: #639bfc;
+}
+
+.color-cyan {
+  color: #70edef;
+}
+
+.color-green {
+  color: #24d571;
+}
+
+.color-yellow {
+  color: #f0f056;
+}
+
+.color-orange {
+  color: #f2925a;
+}
+
+.color-red {
+  color: #ec7b88;
+}

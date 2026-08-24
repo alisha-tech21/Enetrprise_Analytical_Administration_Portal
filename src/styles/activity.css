@@ -1,0 +1,471 @@
+/* =========================================================
+   ACTIVITY PAGE — SOFT PASTEL THEME
+========================================================= */
+
+.activity-page {
+  width: 100%;
+}
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.activity-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.activity-controls select {
+  height: 38px;
+
+  padding: 0 10px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+
+  font-size: 10px;
+  cursor: pointer;
+
+  outline: none;
+}
+
+.activity-controls select:focus {
+  border-color: var(--accent-light);
+}
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.activity-stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+.activity-stat-card {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 18px;
+
+  background: var(--bg-secondary);
+
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.activity-stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background: var(--rainbow-gradient-horizontal);
+
+  opacity: 0.65;
+}
+
+.activity-stat-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.activity-stat-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: var(--accent-soft);
+  color: var(--accent);
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.activity-stat-card:nth-child(2) .activity-stat-icon {
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+
+.activity-stat-card:nth-child(3) .activity-stat-icon {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.activity-stat-card:nth-child(4) .activity-stat-icon {
+  background: var(--pink-soft);
+  color: var(--pink);
+}
+
+.activity-stat-card > div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.activity-stat-card span {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.activity-stat-card strong {
+  font-size: 19px;
+  color: var(--text-primary);
+}
+
+.activity-stat-card small {
+  font-size: 8px;
+  color: var(--success);
+}
+
+/* =========================================================
+   ACTIVITY CARD
+========================================================= */
+
+.activity-card {
+  position: relative;
+  overflow: hidden;
+
+  background: var(--bg-secondary);
+
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.activity-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background: var(--rainbow-gradient-horizontal);
+
+  opacity: 0.65;
+}
+
+.activity-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid var(--border-light);
+}
+
+.activity-card-header h3 {
+  margin: 0 0 4px;
+
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.activity-card-header p {
+  margin: 0;
+
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.activity-filter-button {
+  height: 34px;
+
+  padding: 0 12px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+
+  font-size: 9px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.activity-filter-button:hover {
+  border-color: var(--accent-light);
+
+  background: var(--accent-soft);
+
+  color: var(--accent);
+}
+
+/* =========================================================
+   ACTIVITY LIST
+========================================================= */
+
+.activity-list {
+  padding: 5px 20px;
+}
+
+.activity-item {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+
+  min-height: 76px;
+
+  padding: 16px 0;
+}
+
+/* =========================================================
+   ACTIVITY ICON
+========================================================= */
+
+.activity-icon {
+  position: relative;
+  z-index: 2;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid var(--border-light);
+
+  border-radius: 50%;
+
+  background: var(--bg-secondary);
+
+  color: var(--accent);
+
+  font-size: 18px;
+  font-weight: 700;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.activity-icon.report {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.activity-icon.update {
+  color: var(--pink);
+  background: var(--pink-soft);
+}
+
+.activity-icon.user {
+  color: var(--cyan);
+  background: var(--cyan-soft);
+}
+
+.activity-icon.export {
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.activity-icon.settings {
+  color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.activity-icon.project {
+  color: var(--orange);
+  background: var(--orange-soft);
+}
+
+.activity-icon.login {
+  color: var(--yellow);
+  background: var(--yellow-soft);
+}
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.activity-line {
+  position: absolute;
+
+  left: 17px;
+
+  top: 52px;
+  bottom: -16px;
+
+  width: 1px;
+
+  background: var(--border-color);
+}
+
+.activity-item:last-child .activity-line {
+  display: none;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.activity-details {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding-left: 13px;
+  padding-top: 2px;
+}
+
+.activity-details strong {
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: var(--text-primary);
+}
+
+.activity-action {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.activity-target {
+  font-size: 10px;
+
+  font-weight: 600;
+
+  color: var(--accent);
+}
+
+.activity-time {
+  font-size: 9px;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.activity-footer {
+  display: flex;
+
+  justify-content: center;
+
+  padding: 16px 20px;
+
+  border-top: 1px solid var(--border-light);
+}
+
+.load-more-button {
+  padding: 8px 14px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 8px;
+
+  background: var(--bg-tertiary);
+
+  color: var(--text-secondary);
+
+  font-size: 9px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.load-more-button:hover {
+  border-color: var(--accent-light);
+
+  background: var(--accent-soft);
+
+  color: var(--accent);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+  .activity-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .activity-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .activity-controls select,
+  .activity-controls .primary-button {
+    width: 100%;
+  }
+
+  .activity-card-header {
+    align-items: stretch;
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .activity-filter-button {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 500px) {
+  .activity-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-card-header {
+    padding: 16px;
+  }
+
+  .activity-list {
+    padding: 5px 16px;
+  }
+}

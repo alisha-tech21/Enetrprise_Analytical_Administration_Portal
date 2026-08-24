@@ -1,0 +1,517 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* =========================================================
+   ANALYTIX — RAINBOW PREMIUM DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+  /* =========================
+     BACKGROUNDS / SURFACES
+  ========================= */
+
+  --bg-primary: #fffaff;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #faf7ff;
+
+  --surface-lowest: #ffffff;
+  --surface-low: #fff8fd;
+  --surface: #f8f4ff;
+  --surface-high: #f2f7ff;
+  --surface-highest: #eefcff;
+
+  /* =========================
+     BORDERS
+  ========================= */
+
+  --border-color: #e9e3f2;
+  --border-light: #f1ebf7;
+
+  /* =========================
+     TEXT
+  ========================= */
+
+  --text-primary: #211b32;
+  --text-secondary: #5e5870;
+  --text-muted: #91899f;
+
+  /* =========================
+     RAINBOW BRAND COLORS
+  ========================= */
+
+  /* Violet */
+  --accent: #7c3aed;
+  --accent-light: #a855f7;
+  --accent-soft: rgba(124, 58, 237, 0.1);
+  --accent-glow: rgba(124, 58, 237, 0.15);
+
+  /* Pink */
+  --secondary: #ec4899;
+  --secondary-light: #f472b6;
+  --secondary-soft: rgba(236, 72, 153, 0.1);
+
+  /* Blue */
+  --tertiary: #3b82f6;
+  --tertiary-light: #60a5fa;
+
+  /* Cyan */
+  --cyan: #06b6d4;
+  --cyan-light: #22d3ee;
+  --cyan-soft: rgba(6, 182, 212, 0.1);
+
+  /* Green */
+  --success: #22c55e;
+  --success-soft: rgba(34, 197, 94, 0.1);
+
+  /* Yellow */
+  --warning: #eab308;
+  --warning-soft: rgba(234, 179, 8, 0.12);
+
+  /* Red */
+  --danger: #ef4444;
+  --danger-soft: rgba(239, 68, 68, 0.1);
+
+  /* Orange */
+  --orange: #f97316;
+  --orange-soft: rgba(249, 115, 22, 0.1);
+
+  /* =========================
+     RAINBOW GRADIENTS
+  ========================= */
+
+  --rainbow-gradient: linear-gradient(
+    135deg,
+    #ef4444 0%,
+    #f97316 16%,
+    #eab308 32%,
+    #22c55e 48%,
+    #06b6d4 64%,
+    #3b82f6 80%,
+    #8b5cf6 100%
+  );
+
+  --rainbow-gradient-soft: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.1),
+    rgba(249, 115, 22, 0.1),
+    rgba(234, 179, 8, 0.1),
+    rgba(34, 197, 94, 0.1),
+    rgba(6, 182, 212, 0.1),
+    rgba(59, 130, 246, 0.1),
+    rgba(139, 92, 246, 0.1)
+  );
+
+  --rainbow-border: linear-gradient(
+    90deg,
+    #ef4444,
+    #f97316,
+    #eab308,
+    #22c55e,
+    #06b6d4,
+    #3b82f6,
+    #8b5cf6,
+    #ec4899
+  );
+
+  /* =========================
+     SHADOWS
+  ========================= */
+
+  --shadow-sm: 0 2px 10px rgba(76, 54, 105, 0.05);
+
+  --shadow-md: 0 8px 28px rgba(76, 54, 105, 0.08);
+
+  --shadow-lg: 0 18px 45px rgba(76, 54, 105, 0.1);
+
+  --shadow-dropdown: 0 18px 45px rgba(76, 54, 105, 0.15);
+
+  /* =========================
+     RADIUS
+  ========================= */
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-md: 14px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* =========================
+     SPACING
+  ========================= */
+
+  --space-xs: 4px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+
+  /* =========================
+     LAYOUT
+  ========================= */
+
+  --sidebar-width: 280px;
+  --topbar-height: 72px;
+
+  /* =========================
+     TRANSITIONS
+  ========================= */
+
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* =========================================================
+   DARK MODE — RAINBOW
+   ========================================================= */
+
+[data-theme="dark"] {
+  --bg-primary: #11101b;
+  --bg-secondary: #191827;
+  --bg-tertiary: #211f32;
+
+  --surface-lowest: #191827;
+  --surface-low: #1d1b2d;
+  --surface: #242238;
+  --surface-high: #292641;
+  --surface-highest: #302b4b;
+
+  --border-color: #39344e;
+  --border-light: #302b43;
+
+  --text-primary: #faf7ff;
+  --text-secondary: #d1c9df;
+  --text-muted: #9991aa;
+
+  /* Violet */
+  --accent: #a78bfa;
+  --accent-light: #c4b5fd;
+  --accent-soft: rgba(167, 139, 250, 0.15);
+  --accent-glow: rgba(167, 139, 250, 0.18);
+
+  /* Pink */
+  --secondary: #f472b6;
+  --secondary-light: #f9a8d4;
+  --secondary-soft: rgba(244, 114, 182, 0.14);
+
+  /* Blue */
+  --tertiary: #60a5fa;
+  --tertiary-light: #93c5fd;
+
+  /* Cyan */
+  --cyan: #22d3ee;
+  --cyan-light: #67e8f9;
+  --cyan-soft: rgba(34, 211, 238, 0.14);
+
+  /* Green */
+  --success: #4ade80;
+  --success-soft: rgba(74, 222, 128, 0.14);
+
+  /* Yellow */
+  --warning: #facc15;
+  --warning-soft: rgba(250, 204, 21, 0.14);
+
+  /* Red */
+  --danger: #f87171;
+  --danger-soft: rgba(248, 113, 113, 0.14);
+
+  /* Orange */
+  --orange: #fb923c;
+  --orange-soft: rgba(251, 146, 60, 0.14);
+
+  /* Rainbow gradients */
+
+  --rainbow-gradient: linear-gradient(
+    135deg,
+    #f87171 0%,
+    #fb923c 16%,
+    #facc15 32%,
+    #4ade80 48%,
+    #22d3ee 64%,
+    #60a5fa 80%,
+    #a78bfa 100%
+  );
+
+  --rainbow-gradient-soft: linear-gradient(
+    135deg,
+    rgba(248, 113, 113, 0.12),
+    rgba(251, 146, 60, 0.12),
+    rgba(250, 204, 21, 0.12),
+    rgba(74, 222, 128, 0.12),
+    rgba(34, 211, 238, 0.12),
+    rgba(96, 165, 250, 0.12),
+    rgba(167, 139, 250, 0.12)
+  );
+
+  --rainbow-border: linear-gradient(
+    90deg,
+    #f87171,
+    #fb923c,
+    #facc15,
+    #4ade80,
+    #22d3ee,
+    #60a5fa,
+    #a78bfa,
+    #f472b6
+  );
+
+  /* Shadows */
+
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.18);
+
+  --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.22);
+
+  --shadow-lg: 0 18px 45px rgba(0, 0, 0, 0.28);
+
+  --shadow-dropdown: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+:root {
+  font-family: "Inter", sans-serif;
+
+  color: var(--text-primary);
+  background: var(--bg-primary);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: var(--bg-primary);
+  color: var(--text-primary);
+
+  transition:
+    background var(--transition-normal),
+    color var(--transition-normal);
+}
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  outline: none;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(139, 92, 246, 0.22);
+  color: var(--text-primary);
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d8cde8;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b9a7d4;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #514969;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #665a83;
+}
+
+/* =========================================================
+   COMMON CARD STYLE
+   ========================================================= */
+
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================================================
+   COMMON PAGE CONTAINER
+   ========================================================= */
+
+.page-content {
+  background: var(--bg-primary);
+}
+
+/* =========================================================
+   COMMON HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* =========================================================
+   NUMBER ALIGNMENT
+   ========================================================= */
+
+strong,
+.stat-value,
+.metric-value,
+.data-value,
+.amount {
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================================
+   RAINBOW UTILITY CLASSES
+   ========================================================= */
+
+/* Rainbow text */
+
+.rainbow-text {
+  background: var(--rainbow-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Rainbow button */
+
+.rainbow-button {
+  background: var(--rainbow-gradient);
+  color: #ffffff;
+  border-radius: var(--radius);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.rainbow-button:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 8px 22px rgba(139, 92, 246, 0.2);
+}
+
+/* Rainbow glow */
+
+.rainbow-glow {
+  box-shadow:
+    0 0 0 1px rgba(139, 92, 246, 0.08),
+    0 12px 35px rgba(236, 72, 153, 0.08);
+}
+
+/* Rainbow accent line */
+
+.rainbow-line {
+  height: 3px;
+  width: 100%;
+  background: var(--rainbow-gradient);
+  border-radius: var(--radius-full);
+}
+
+/* Rainbow badge */
+
+.rainbow-badge {
+  background: var(--rainbow-gradient-soft);
+  color: var(--accent);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+}
+
+/* =========================================================
+   ACCENT COLORS FOR CHARTS / STATS
+   ========================================================= */
+
+.color-purple {
+  color: #8b5cf6;
+}
+
+.color-pink {
+  color: #ec4899;
+}
+
+.color-blue {
+  color: #3b82f6;
+}
+
+.color-cyan {
+  color: #06b6d4;
+}
+
+.color-green {
+  color: #22c55e;
+}
+
+.color-yellow {
+  color: #eab308;
+}
+
+.color-orange {
+  color: #f97316;
+}
+
+.color-red {
+  color: #ef4444;
+}
